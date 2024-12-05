@@ -1,0 +1,433 @@
+LIÇÃO 1:
+use viagens
+
+resposta: ```switched to db viagens```
+---
+
+LIÇÃO 2:
+
+db.destinos.insertOne({
+_id: 1,
+pais: "Franca",
+estado: "Paris",
+principalAtracao: "TorreEifel",
+custo: 150,
+avaliacao: 4.8
+});
+
+resposta: 
+```
+{
+  acknowledged: true,
+  insertedId: 1
+}
+```
+
+---
+
+LIÇÃO 3:
+
+db.pacotes.insertOne({
+  _id: 2,
+  nome: "Aventura Na Amazonia",
+  duracaoDias: 7,
+  preco: 1200,
+  transporte: "Aviao"
+});
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: 2
+}
+```
+
+---
+
+LIÇÃO 4:
+
+db.avaliacoes.insertOne ({
+  _id: 1,
+  nome: null,
+  destino: "Toquio",
+  avaliacao: 5,
+  comentario: "Incrivel experiencia cultural!"
+});
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: 1
+}
+```
+
+---
+
+LIÇÃO 5: 
+
+db.clientes.insertOne({
+  _id: 1,
+  nome: "João Silva",
+  email: "joao.silva@example.com",
+  destinoInteresse: "Nova Iorque"
+});
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: 1
+}
+```
+
+---
+
+LIÇÃO 6: 
+
+db.reservas.insertOne ({
+_id: 1,
+nomeCliente: "Maria Santos",
+destinoReservado: "Bali",
+status: null,
+dataPartida: "2024/07/15",
+dataRetorno: "2024/07/25"
+});
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: 1
+}
+```
+
+---
+
+LIÇÃO 7:
+
+db.destinos.updateMany (
+  {_id: 1},
+  {$mul: {custo: 1.10}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 8:
+
+db.destinos.updateOne (
+  {_id: 2},
+  {$set: {avaliacao: 4.9}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 9:
+
+db.pacotes.updateMany(
+  {_id: 1},
+  {$inc: {duraçaoDias: 3}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 10:
+
+db.pacotes.updateMany(
+  {_id: 1},
+  {$mul: {preco: 0.85}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 11:
+
+db.avaliacoes.insertOne ({
+  _id: 2,
+  nome: "Mateus",
+  destino: "Rio de Janeiro",
+  avaliacao: 4.3,
+  comentario: "Boa Recepção!"
+});
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: 2
+}
+```
+
+---
+
+LIÇÃO 12:
+
+db.clientes.updateMany(
+  {_id: 1},
+  {$set: {email: "novo.email@examplo.com"}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 13:
+
+db.pacotes.updateMany(
+  {_id: 2},
+  {$set: {nome: "Arco Do Triunfo"}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 14:
+
+db.reservas.updateMany(
+  {_id: 1},
+  {$set: {status: "Confirmada"}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 15:
+
+db.reservas.updateMany(
+  {_id: 1},
+  {$set: {destinoReservado: "Tóquio"}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 16:
+
+db.pacotes.updateMany(
+  {_id: 2},
+  {$set: {nome: "Aventura Na Floresta Amazônica"}}
+);
+
+resposta:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+---
+
+LIÇÃO 17:
+
+db.destinos.deleteOne({pais: "Franca"});
+
+resposta:
+```
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+```
+
+---
+
+LIÇÃO 18: 
+
+1. db.avaliacoes.updateOne(
+{_id: 1},
+{$set: {avaliacao: 3}}
+);
+
+/
+
+resposta1:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+2. db.avaliacoes.deleteMany(
+{destino: "Toquio", avaliacao: 3},
+)
+
+resposta2:
+```
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+```
+
+---
+
+LIÇÃO 19:
+
+
+1. db.reservas.updateMany(
+  {_id: 1},
+  {$set: {status: "Cancelada"}}
+)
+
+resposta1:
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+```
+
+/
+
+2. db.reservas.deleteOne( {status: "Cancelada"})
+
+resposta2:
+```
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+```
+
+---
+
+LIÇÃO 20:
+
+1. db.destinos.insertOne({
+_id: 1,
+pais: "Franca",
+estado: "Paris",
+principalAtracao: "TorreEifel",
+custo: 150,
+avaliacao: 4.8
+});
+
+resposta1:
+```
+{
+  acknowledged: true,
+  insertedId: 1
+}
+```
+
+/
+
+2. db.destinos.deleteOne( {principalAtracao: "Torre Eifel"});
+
+
+resposta2:
+```
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+```
+
+---
+
+LIÇÃO 21:
+
+db.clientes.deleteOne ({_id: 1})
+
+resposta:
+```
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+```
